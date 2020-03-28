@@ -1,0 +1,30 @@
+{
+  "name": "@paloaltonetworks/pan-cortex-xdr",
+  "version": "0.1.0",
+  "description": "Palo Alto Networks Cortex XDR client library",
+  "homepage": "https://github.com/PaloAltoNetworks/pan-cortex-xdr-nodejs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaloAltoNetworks/pan-cortex-xdr-nodejs.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run clean && npm run build:lib && npm run build:test && npm run build:doc",
+    "build:lib": "mkdir -p lib && tsc",
+    "build:test": "mkdir -p test && tsc -p mocha",
+    "build:doc": "rm -rf doc && node_modules/typedoc/bin/typedoc --mode file --out doc --excludeNotExported --excludePrivate --readme none --theme markdown --gitRevision master",
+    "test": "mocha",
+    "clean": "rm -rf test && rm -rf lib && rm -rf doc"
+  },
+  "author": "Palo Alto Networks Developer Relations",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.7.0",
+    "mocha": "^6.1.4",
+    "typedoc": "^0.16.7",
+    "typedoc-plugin-markdown": "^2.2.16",
+    "typescript": "^3.2.2"
+  }
+}
